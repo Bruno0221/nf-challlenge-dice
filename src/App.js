@@ -5,7 +5,7 @@ import { getD6Roll } from "./utils";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App() {
-  const [rolls, setRolls] = useLocalStorageState("rolls", { defaultValue: [] });
+  const [rolls, setRolls] = useLocalStorageState("rolls", []);
 
   const handleRoll = () => {
     setRolls([{ value: getD6Roll(), time: Date.now() }, ...rolls]);
